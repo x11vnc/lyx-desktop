@@ -11,14 +11,12 @@ USER root
 WORKDIR /tmp
 
 # Install texlive and lyx
-RUN add-apt-repository ppa:webupd8team/atom && \
-    add-apt-repository ppa:lyx-devel/release && \
+RUN add-apt-repository ppa:lyx-devel/release && \
     apt-get update && \
     apt-get install -q -y --no-install-recommends \
         texlive \
         python-lxml \
         pstoedit \
-        atom \
         lyx \
         jabref \
         imagemagick \

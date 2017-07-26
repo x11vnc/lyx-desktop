@@ -1,0 +1,15 @@
+os: linux
+dist: trusty
+language: python
+services: docker
+
+script:
+  - docker --version
+  - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_USERPASS"
+  - 'docker build --tag x11vnc/lyx-desktop:latest . &&
+     docker push x11vnc/lyx-desktop &&
+     touch success'
+  # Test script without launching webbrowser and push new image if successful
+  - './lyx_desktop.py -d -n -v test_project && docker stop $(docker ps -q)'
+  - './lyx_desktop.py -d -n && docker stop $(docker ps -q)'
+  - docker images

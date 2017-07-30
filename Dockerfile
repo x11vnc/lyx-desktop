@@ -27,12 +27,10 @@ RUN add-apt-repository ppa:lyx-devel/release && \
         texlive-math-extra \
         texlive-science \
         \
-        latex-xft-fonts \
         python-lxml \
         \
         preview-latex-style \
         dvipng \
-        dvipost \
         lyx \
         jabref \
         imagemagick \

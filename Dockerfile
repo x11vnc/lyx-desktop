@@ -1,5 +1,5 @@
 # Builds a Docker image with Ubuntu 16.04 and LyX and some graphics tools
-# and additional software recommended by https://www.lyx.org/AdditionalSoftware
+# and additional software recommended by https://wiki.lyx.org/LyX/LyXOnUbuntu
 #
 # Authors:
 # Xiangmin Jiao <xmjiao@gmail.com>
@@ -17,25 +17,41 @@ RUN add-apt-repository ppa:lyx-devel/release && \
         texlive \
         texlive-lang-english \
         texlive-generic-recommended \
+        texlive-latex-recommended \
+        texlive-fonts-recommended \
+        texlive-extra-utils \
+        texlive-fonts-extra \
+        texlive-formats-extra \
+        texlive-generic-extra \
+        texlive-latex-extra \
+        texlive-math-extra \
+        texlive-science \
+        \
+        latex-xft-fonts \
         python-lxml \
-        pstoedit \
+        \
+        preview-latex-style \
+        dvipng \
+        dvipost \
         lyx \
         jabref \
         imagemagick \
         hunspell \
         aspell \
+        ispell \
         evince \
         xpdf \
+        psutils \
+        pstoedit \
+        ps2eps \
         gv \
         latex2rtf \
         latex2html \
-        ps2eps \
         chktex \
         \
         inkscape \
         tgif \
-        xfig \
-        && \
+        xfig && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 

@@ -15,6 +15,8 @@ RUN add-apt-repository ppa:lyx-devel/release && \
     apt-get update && \
     apt-get install -q -y --no-install-recommends \
         texlive \
+        texlive-lang-english \
+        texlive-generic-recommended \
         python-lxml \
         pstoedit \
         lyx \

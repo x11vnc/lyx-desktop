@@ -38,6 +38,7 @@ RUN add-apt-repository ppa:lyx-devel/release && \
         imagemagick \
         hunspell \
         aspell \
+        aspell-en \
         ispell \
         evince \
         xpdf \

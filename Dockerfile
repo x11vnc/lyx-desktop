@@ -9,7 +9,7 @@ LABEL maintainer "Xiangmin Jiao <xmjiao@gmail.com>"
 
 USER root
 WORKDIR /tmp
-COPY images/LyX $DOCKER_HOME/.config
+COPY image/LyX $DOCKER_HOME/.config
 
 # Install texlive and lyx
 RUN add-apt-repository ppa:lyx-devel/release && \

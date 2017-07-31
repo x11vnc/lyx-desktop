@@ -9,6 +9,7 @@ LABEL maintainer "Xiangmin Jiao <xmjiao@gmail.com>"
 
 USER root
 WORKDIR /tmp
+COPY images/LyX $DOCKER_HOME/.config
 
 # Install texlive and lyx
 RUN add-apt-repository ppa:lyx-devel/release && \
@@ -52,10 +53,13 @@ RUN add-apt-repository ppa:lyx-devel/release && \
         tgif \
         xfig && \
     apt-get clean && \
-    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
+    chmod -R $DOCKER_USER:$DOCKER_USER $DOCKER_HOME/.config
 
 USER $DOCKER_USER
-RUN echo '@lyx' >> $DOCKER_HOME/.config/lxsession/LXDE/autostart
+RUN echo '@lyx' >> $DOCKER_HOME/.config/lxsession/LXDE/autostart && \
+    mkdir -p ~/.lyx && \
+    ln -s -f $DOCKER_HOME/.config/LyX/preferences ~/.lyx
 
 USER root
 

@@ -1,4 +1,4 @@
-# Builds a Docker image with Ubuntu 16.04 and LyX and some graphics tools
+# Builds a Docker image with Ubuntu 17.10 and LyX and some graphics tools
 # and additional software recommended by https://wiki.lyx.org/LyX/LyXOnUbuntu
 #
 # Authors:
@@ -12,8 +12,7 @@ WORKDIR /tmp
 COPY image/LyX $DOCKER_HOME/.config
 
 # Install texlive and lyx
-RUN add-apt-repository ppa:lyx-devel/release && \
-    apt-get update && \
+RUN apt-get update && \
     apt-get install -q -y --no-install-recommends \
         texlive \
         texlive-lang-english \

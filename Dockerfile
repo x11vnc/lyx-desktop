@@ -24,7 +24,6 @@ RUN apt-get update && \
         texlive-formats-extra \
         texlive-generic-extra \
         texlive-latex-extra \
-        texlive-math-extra \
         texlive-science \
         \
         python-lxml \

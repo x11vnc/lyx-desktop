@@ -12,7 +12,8 @@ WORKDIR /tmp
 COPY image/LyX $DOCKER_HOME/.config
 
 # Install texlive and lyx
-RUN apt-get update && \
+RUN add-apt-repository ppa:lyx-devel/release && \
+    apt-get update && \
     apt-get install -q -y --no-install-recommends \
         texlive \
         texlive-lang-english \

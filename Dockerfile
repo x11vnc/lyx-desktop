@@ -1,10 +1,10 @@
-# Builds a Docker image with Ubuntu 17.10 and LyX and some graphics tools
+# Builds a Docker image with Ubuntu 18.04 and LyX and some graphics tools
 # and additional software recommended by https://wiki.lyx.org/LyX/LyXOnUbuntu
 #
 # Authors:
 # Xiangmin Jiao <xmjiao@gmail.com>
 
-FROM x11vnc/desktop:latest
+FROM x11vnc/desktop:singularity
 LABEL maintainer "Xiangmin Jiao <xmjiao@gmail.com>"
 
 USER root

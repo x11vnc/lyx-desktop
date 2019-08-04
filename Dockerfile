@@ -9,9 +9,7 @@ LABEL maintainer "Xiangmin Jiao <xmjiao@gmail.com>"
 
 USER root
 WORKDIR /tmp
-COPY image/LyX $DOCKER_HOME/.config
-COPY image/enchant $DOCKER_HOME/.config
-COPY image/okularpartrc $DOCKER_HOME/.config
+COPY image/config $DOCKER_HOME/.config
 COPY image/okular-unique /usr/local/bin
 
 # Install texlive and lyx

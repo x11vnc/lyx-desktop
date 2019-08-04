@@ -20,7 +20,7 @@ proj = os.path.basename(sys.argv[0]).split('_')[0]
 image = owner + "/lyx-desktop"
 tag = "18.04"
 projdir = "project"
-workdir = "project"
+workdir = "shared"
 
 
 def parse_args(description):

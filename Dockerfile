@@ -17,6 +17,7 @@ COPY image/okular-unique /usr/local/bin
 # Install texlive and lyx
 RUN add-apt-repository ppa:lyx-devel/release && \
     apt-get update && \
+    echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections && \
     apt-get install -q -y --no-install-recommends \
         texlive \
         texlive-lang-english \

@@ -1,7 +1,7 @@
-# LyX 2.2.3 generated this file. If you want to make your own
+# LyX 2.3.3 generated this file. If you want to make your own
 # modifications you should do them from inside LyX and save.
 
-Format 19
+Format 24
 
 
 #
@@ -15,8 +15,12 @@ Format 19
 # SCREEN & FONTS SECTION ############################
 #
 
+\screen_font_roman "Times New Roman"
+\screen_font_sans "Arial"
+\screen_font_typewriter "Courier New"
 \screen_font_sizes 5 7 8 9 10 12 14.4 17.26 20.74 24.88
 \single_instance false
+\forward_search_pdf "okular --unique \"file:$$o#src:$$n $$f\""
 
 #
 # COLOR SECTION ###################################
@@ -47,14 +51,11 @@ Format 19
 # SPELLCHECKER SECTION ##############################
 #
 
-\accept_compound true
 
 #
 # LANGUAGE SUPPORT SECTION ##########################
 #
 
-\spellchecker hunspell
-\spellcheck_continuously true
 
 #
 # 2nd MISC SUPPORT SECTION ##########################
@@ -65,7 +66,7 @@ Format 19
 # FORMATS SECTION ##########################
 #
 
-\default_otf_view_format dvi3
+\format "pdf2" "pdf" "PDF (pdflatex)" "F" "okular-unique" "" "document,vector,menu=export" ""
 
 #
 # CONVERTERS SECTION ##########################

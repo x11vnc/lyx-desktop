@@ -4,12 +4,15 @@
 # Authors:
 # Xiangmin Jiao <xmjiao@gmail.com>
 
-FROM x11vnc/desktop:singularity
+FROM x11vnc/desktop:18.04
 LABEL maintainer "Xiangmin Jiao <xmjiao@gmail.com>"
 
 USER root
 WORKDIR /tmp
 COPY image/LyX $DOCKER_HOME/.config
+COPY image/enchant $DOCKER_HOME/.config
+COPY image/okularpartrc $DOCKER_HOME/.config
+COPY image/okular-unique /usr/local/bin
 
 # Install texlive and lyx
 RUN add-apt-repository ppa:lyx-devel/release && \
@@ -26,21 +29,29 @@ RUN add-apt-repository ppa:lyx-devel/release && \
         texlive-formats-extra \
         texlive-generic-extra \
         texlive-latex-extra \
+        texlive-bibtex-extra \
+        texlive-publishers \
+        texlive-pstricks \
         texlive-science \
         \
         python-lxml \
         \
         preview-latex-style \
         dvipng \
+        texmaker \
         lyx \
+        fonts-lyx \
+        msttcorefonts \
         jabref \
         imagemagick \
         hunspell \
+        hunspell-en-us \
         aspell \
         aspell-en \
         ispell \
         evince \
         xpdf \
+        okular \
         psutils \
         pstoedit \
         ps2eps \
@@ -49,6 +60,7 @@ RUN add-apt-repository ppa:lyx-devel/release && \
         latex2html \
         chktex \
         \
+        gimp \
         inkscape \
         tgif \
         xfig && \

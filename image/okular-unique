@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Start up a unique session for Okular
+file=`echo $@ | grep -oP "^.*#"`
+infile=`echo $file | sed -e 's/#$//'`
+open=`ps -fe | grep -P "okular $infile" | grep -vc grep`
+if [ $open -eq 0 ]; then
+  okular "$@" &
+fi

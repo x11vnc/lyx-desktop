@@ -20,7 +20,7 @@ Format 24
 \screen_font_typewriter "Courier New"
 \screen_font_sizes 5 7 8 9 10 12 14.4 17.26 20.74 24.88
 \single_instance false
-\forward_search_pdf "okular --unique \"file:$$o#src:$$n $$f\""
+\forward_search_pdf "okular \"file:$$o#src:$$n $$f\""
 
 #
 # COLOR SECTION ###################################
@@ -56,6 +56,7 @@ Format 24
 # LANGUAGE SUPPORT SECTION ##########################
 #
 
+\spellcheck_continuously true
 
 #
 # 2nd MISC SUPPORT SECTION ##########################

@@ -33,6 +33,7 @@ RUN chmod a+x /usr/local/bin/okular-unique && \
         texlive-publishers \
         texlive-pstricks \
         texlive-science \
+        lmodern \
         \
         python-lxml \
         \

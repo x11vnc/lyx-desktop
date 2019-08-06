@@ -59,6 +59,7 @@ RUN chmod a+x /usr/local/bin/okular-unique && \
         latex2rtf \
         latex2html \
         chktex \
+        pandoc \
         \
         gimp \
         inkscape \

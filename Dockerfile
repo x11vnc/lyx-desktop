@@ -23,7 +23,6 @@ RUN add-apt-repository ppa:lyx-devel/release && \
         texlive-latex-recommended \
         texlive-fonts-recommended \
         texlive-extra-utils \
-        texlive-fonts-extra \
         texlive-font-utils \
         texlive-formats-extra \
         texlive-generic-extra \

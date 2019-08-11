@@ -20,7 +20,7 @@ Format 24
 \screen_font_typewriter "Courier New"
 \screen_font_sizes 5 7 8 9 10 12 14.4 17.26 20.74 24.88
 \single_instance false
-\forward_search_pdf "okular \"file:$$o#src:$$n $$f\""
+\forward_search_pdf "evince_forward_search \"$$o\" $$n \"$$f\""
 
 #
 # COLOR SECTION ###################################
@@ -67,7 +67,7 @@ Format 24
 # FORMATS SECTION ##########################
 #
 
-\format "pdf2" "pdf" "PDF (pdflatex)" "F" "okular-unique" "" "document,vector,menu=export" ""
+\format "pdf2" "pdf" "PDF (pdflatex)" "F" "evince_sync_lyx" "" "document,vector,menu=export" ""
 
 #
 # CONVERTERS SECTION ##########################

@@ -10,11 +10,10 @@ LABEL maintainer "Xiangmin Jiao <xmjiao@gmail.com>"
 USER root
 WORKDIR /tmp
 COPY image/config $DOCKER_HOME/.config
-COPY image/okular-unique /usr/local/bin
+COPY image/bin /usr/local/bin
 
 # Install texlive and lyx
-RUN chmod a+x /usr/local/bin/okular-unique && \
-    add-apt-repository ppa:lyx-devel/release && \
+RUN add-apt-repository ppa:lyx-devel/release && \
     apt-get update && \
     echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections && \
     apt-get install -q -y --no-install-recommends \
@@ -52,7 +51,6 @@ RUN chmod a+x /usr/local/bin/okular-unique && \
         ispell \
         evince \
         xpdf \
-        okular \
         psutils \
         pstoedit \
         ps2eps \

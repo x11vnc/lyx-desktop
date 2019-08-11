@@ -2,7 +2,7 @@
 
 """
 Launch a Docker image with Ubuntu and LXDE window manager, and
-automatically open up the URL in the default web browser. 
+automatically open up the URL in the default web browser.
 It also sets up port forwarding for ssh.
 """
 
@@ -359,7 +359,11 @@ if __name__ == "__main__":
     if not os.path.exists(homedir + "/.ssh"):
         os.mkdir(homedir + "/.ssh")
 
-    volumes += ["-v", homedir + "/.ssh" + ":" + docker_home + "/.ssh"]
+    if platform.system() != 'Windows':
+        volumes += ["-v", homedir + "/.ssh" + ":" + docker_home + "/.ssh"]
+    else:
+        # On Windows, cannot use ~/.ssh directly. Mount it into ~/.ssh-host.
+        volumes += ["-v", homedir + "/.ssh" + ":" + docker_home + "/.ssh-host"]
 
     devices = []
     if args.nvidia:
@@ -422,11 +426,16 @@ if __name__ == "__main__":
                                      "to connect to localhost:%s with password %s\n" %
                                      (port_vnc, passwd))
 
-                        if platform.system() != 'Windows':
-                            stdout_write("You can also log into the container using the command\n    ssh -X -p " + port_ssh + " " +
-                                         docker_user + "@localhost -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no\n" +
-                                         "with an authorized key in " +
-                                         homedir + "/.ssh/authorized_keys.\n")
+                        if platform.system() == 'Windows':
+                            # Copy ssh config files
+                            subprocess.check_output(["docker", "exec", container,
+                                    "rsync", "-rog", "--chown=ubuntu:ubuntu", "--chmod=600",
+                                    "/home/ubuntu/.ssh-host/", "/home/ubuntu/.ssh/"])
+
+                        stdout_write("You can also log into the container using the command\n    ssh -X -p " + port_ssh + " " +
+                                        docker_user + "@localhost -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no\n" +
+                                        "with an authorized key in " +
+                                        homedir + "/.ssh/authorized_keys.\n")
 
                         if not args.no_browser:
                             wait_net_service(int(port_http))

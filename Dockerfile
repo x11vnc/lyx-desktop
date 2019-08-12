@@ -64,7 +64,10 @@ RUN add-apt-repository ppa:lyx-devel/release && \
         gimp \
         inkscape \
         tgif \
-        xfig && \
+        xfig \
+        cups cups-client \
+        printer-driver-all \
+        system-config-printer && \
     apt-get clean && \
     curl -O http://bluegriffon.org/freshmeat/3.0.1/bluegriffon-3.0.1.Ubuntu16.04-x86_64.deb && \
     dpkg -i bluegriffon-3.0.1.Ubuntu16.04-x86_64.deb && \

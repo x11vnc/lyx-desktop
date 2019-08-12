@@ -56,6 +56,7 @@ RUN add-apt-repository ppa:lyx-devel/release && \
         gv \
         latex2rtf \
         latex2html \
+        libreoffice \
         chktex \
         pandoc \
         \

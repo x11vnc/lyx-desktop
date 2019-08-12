@@ -67,6 +67,7 @@ RUN add-apt-repository ppa:lyx-devel/release && \
         xfig \
         cups cups-client \
         printer-driver-all \
+        openprinting-ppds \
         system-config-printer && \
     apt-get clean && \
     curl -O http://bluegriffon.org/freshmeat/3.0.1/bluegriffon-3.0.1.Ubuntu16.04-x86_64.deb && \

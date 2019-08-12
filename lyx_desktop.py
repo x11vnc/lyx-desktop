@@ -18,7 +18,7 @@ import os
 owner = "x11vnc"
 proj = os.path.basename(sys.argv[0]).split('_')[0]
 image = owner + "/lyx-desktop"
-tag = "latest"
+tag = "full"
 projdir = "project"
 workdir = "shared"
 volume = proj + "_project"
@@ -38,7 +38,7 @@ def parse_args(description):
                         default=image)
 
     parser.add_argument('-t', '--tag',
-                        help='Tag of the image. The default is latest. ' +
+                        help='Tag of the image. The default is ' + tag + '. ' +
                         'If the image already has a tag, its tag prevails.',
                         default=tag)
 

@@ -6,7 +6,7 @@ services: docker
 script:
   - docker --version
   - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_USERPASS"
-  - 'docker build --tag x11vnc/lyx-desktop:latest . &&
+  - 'docker build --tag x11vnc/lyx-desktop . &&
      docker push x11vnc/lyx-desktop &&
      touch success'
   # Test script without launching webbrowser and push new image if successful

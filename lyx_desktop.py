@@ -18,9 +18,10 @@ import os
 owner = "x11vnc"
 proj = os.path.basename(sys.argv[0]).split('_')[0]
 image = owner + "/lyx-desktop"
-tag = "18.04"
+tag = "latest"
 projdir = "project"
 workdir = "shared"
+volume = proj + "_project"
 
 
 def parse_args(description):
@@ -39,12 +40,12 @@ def parse_args(description):
     parser.add_argument('-t', '--tag',
                         help='Tag of the image. The default is latest. ' +
                         'If the image already has a tag, its tag prevails.',
-                        default="latest")
+                        default=tag)
 
     parser.add_argument('-v', '--volume',
                         help='A data volume to be mounted at ~/" + projdir + ". ' +
-                        'The default is ' + proj + '_project.',
-                        default=proj + "_project")
+                        'The default is ' + volume + '.',
+                       default=volume)
 
     parser.add_argument('-w', '--workdir',
                         help='The starting work directory in container. ' +
@@ -194,7 +195,7 @@ def get_screen_resolution():
 def handle_interrupt(container):
     """Handle keyboard interrupt"""
     try:
-        print("Press Ctrl-C again to stop the container: ")
+        print("Press Ctrl-C again to terminate the container: ")
         time.sleep(5)
         print('Invalid response. Resuming...')
     except KeyboardInterrupt:
@@ -433,9 +434,9 @@ if __name__ == "__main__":
                                     "/home/ubuntu/.ssh-host/", "/home/ubuntu/.ssh/"])
 
                         stdout_write("You can also log into the container using the command\n    ssh -X -p " + port_ssh + " " +
-                                        docker_user + "@localhost -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no\n" +
-                                        "with an authorized key in " +
-                                        homedir + "/.ssh/authorized_keys.\n")
+                                     docker_user + "@localhost -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no\n" +
+                                     "with an authorized key in " +
+                                     homedir + "/.ssh/authorized_keys.\n")
 
                         if not args.no_browser:
                             wait_net_service(int(port_http))
@@ -450,10 +451,10 @@ if __name__ == "__main__":
 
             if args.detach:
                 print('Started container ' + container + ' in background.')
-                print('To stop it, use "docker stop ' + container + '".')
+                print('To terminate it, use "docker stop ' + container + '".')
                 sys.exit(0)
 
-            print("Press Ctrl-C to stop the container.")
+            print("Press Ctrl-C to terminate the container.")
             time.sleep(1)
 
             # Wait until the container exits or Ctlr-C is pressed

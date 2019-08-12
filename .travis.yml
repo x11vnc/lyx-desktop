@@ -3,13 +3,12 @@ dist: trusty
 language: python
 services: docker
 
+before_script:
+  - git clone --depth=1 https://$GIT_TOKEN@github.com/xmjiao/ci-util.git
+
 script:
-  - docker --version
-  - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_USERPASS"
-  - 'docker build --tag x11vnc/lyx-desktop . &&
-     docker push x11vnc/lyx-desktop &&
-     touch success'
-  # Test script without launching webbrowser and push new image if successful
-  - './lyx_desktop.py -d -n -v test_project && docker stop $(docker ps -q)'
-  - './lyx_desktop.py -d -n && docker stop $(docker ps -q)'
-  - docker images
+    - './ci-util/build-docker.sh : x11vnc/lyx-desktop &&
+      ./lyx_desktop.py -t $TRAVIS_BRANCH -d -n -V && docker stop $(docker ps -q)'
+
+after_success:
+  - ./ci-util/trigger-via-api.sh

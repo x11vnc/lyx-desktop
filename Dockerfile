@@ -50,6 +50,7 @@ RUN add-apt-repository ppa:lyx-devel/release && \
         ispell \
         evince \
         xpdf \
+	at-spi2-core \
         psutils \
         pstoedit \
         ps2eps \

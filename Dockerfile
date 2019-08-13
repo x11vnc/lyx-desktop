@@ -67,7 +67,8 @@ RUN add-apt-repository ppa:lyx-devel/release && \
         xfig && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
-    chown -R $DOCKER_USER:$DOCKER_USER $DOCKER_HOME/.config
+    chown -R $DOCKER_USER:$DOCKER_USER $DOCKER_HOME/.config && \
+    mv /etc/ImageMagick-6/policy.xml /etc/ImageMagick-6/policy.xml_old
 
 USER $DOCKER_USER
 RUN echo '@lyx' >> $DOCKER_HOME/.config/lxsession/LXDE/autostart && \

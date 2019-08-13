@@ -15,6 +15,8 @@ Format 24
 # SCREEN & FONTS SECTION ############################
 #
 
+\allow_geometry_session false
+\paragraph_markers true
 \screen_font_roman "Times New Roman"
 \screen_font_sans "Arial"
 \screen_font_typewriter "Courier New"
@@ -41,6 +43,8 @@ Format 24
 # FILE SECTION ######################################
 #
 
+\completion_inline_text true
+\completion_popup_text true
 
 #
 # PLAIN TEXT EXPORT SECTION ##############################

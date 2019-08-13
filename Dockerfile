@@ -61,7 +61,7 @@ RUN add-apt-repository ppa:lyx-devel/release && \
         chktex \
         pandoc \
         \
-        gimp \
+        pinta \
         inkscape \
         tgif \
         xfig && \

@@ -34,6 +34,7 @@ RUN add-apt-repository ppa:lyx-devel/release && \
         texlive-science \
         lmodern \
         \
+        libxml2-dev \
         python-lxml \
         \
         preview-latex-style \

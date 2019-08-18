@@ -76,6 +76,14 @@ RUN add-apt-repository ppa:lyx-devel/release && \
     dpkg -i bluegriffon-3.0.1.Ubuntu16.04-x86_64.deb && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
     chown -R $DOCKER_USER:$DOCKER_USER $DOCKER_HOME/.config && \
+    pip3 install \
+        numba \
+        numpydoc \
+        setuptools \
+        python-igraph \
+        openmesh \
+        mpi4py \
+        pytest && \
     mv /etc/ImageMagick-6/policy.xml /etc/ImageMagick-6/policy.xml_old
 
 USER $DOCKER_USER

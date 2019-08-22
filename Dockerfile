@@ -52,7 +52,7 @@ RUN add-apt-repository ppa:lyx-devel/release && \
         ispell \
         evince \
         xpdf \
-	at-spi2-core \
+	    at-spi2-core \
         psutils \
         pstoedit \
         ps2eps \
@@ -70,7 +70,9 @@ RUN add-apt-repository ppa:lyx-devel/release && \
         cups cups-client \
         printer-driver-all \
         openprinting-ppds \
-        system-config-printer && \
+        system-config-printer \
+        paraview \
+        ffmpeg winff && \
     apt-get clean && \
     curl -O http://bluegriffon.org/freshmeat/3.0.1/bluegriffon-3.0.1.Ubuntu16.04-x86_64.deb && \
     dpkg -i bluegriffon-3.0.1.Ubuntu16.04-x86_64.deb && \

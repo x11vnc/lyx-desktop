@@ -15,6 +15,8 @@ COPY image/etc /etc
 
 # Install texlive and lyx
 RUN add-apt-repository ppa:lyx-devel/release && \
+    sh -c "curl -s http://dl.openfoam.org/gpg.key | apt-key add -" && \
+    add-apt-repository http://dl.openfoam.org/ubuntu && \
     apt-get update && \
     echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections && \
     apt-get install -q -y --no-install-recommends \
@@ -71,7 +73,7 @@ RUN add-apt-repository ppa:lyx-devel/release && \
         printer-driver-all \
         openprinting-ppds \
         system-config-printer \
-        paraview \
+        paraviewopenfoam56 \
         ffmpeg winff && \
     apt-get clean && \
     curl -O http://bluegriffon.org/freshmeat/3.0.1/bluegriffon-3.0.1.Ubuntu16.04-x86_64.deb && \

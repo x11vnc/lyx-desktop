@@ -1,0 +1,13 @@
+Welcome to the Docker image for NumGeom desktop environment!
+
+This image is based on Ubuntu 18.04, with LyX 2.2, Visual Studio Code, 
+Octave 4.2.2, SciPy and Spyder for Python 3.6, Jupyter Notebook for Python 
+and Octave, g++-7.3, LAPACK, ddd, valgrind, and various editors preinstalled.
+
+Please save your code and data into the ~/shared or ~/project directories.
+The former maps to the current work directory on your computer. The latter
+maps to the Docker data volume named lyx_project on your host.
+
+To use git with ssh authentication, make sure the ssh key on your host 
+computer is in bitbucket and github, and then run "ssh-add" in a terminal 
+to add your ssh key to the ssh-agent.

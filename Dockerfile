@@ -12,6 +12,7 @@ WORKDIR /tmp
 COPY image/config $DOCKER_HOME/.config
 COPY image/bin /usr/local/bin
 COPY image/etc /etc
+COPY image/home $DOCKER_HOME
 
 # Install texlive and lyx
 RUN add-apt-repository ppa:lyx-devel/release && \

@@ -1,6 +1,6 @@
 Welcome to the Docker image for NumGeom desktop environment!
 
-This image is based on Ubuntu 18.04, with LyX 2.2, Visual Studio Code, 
+This image is based on Ubuntu 18.04, with LyX 2.3, Visual Studio Code,
 Octave 4.2.2, SciPy and Spyder for Python 3.6, Jupyter Notebook for Python 
 and Octave, g++-7.3, LAPACK, ddd, valgrind, and various editors preinstalled.
 

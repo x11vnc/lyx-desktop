@@ -82,7 +82,7 @@ RUN add-apt-repository ppa:lyx-devel/release && \
     curl -O http://bluegriffon.org/freshmeat/3.0.1/bluegriffon-3.0.1.Ubuntu16.04-x86_64.deb && \
     dpkg -i bluegriffon-3.0.1.Ubuntu16.04-x86_64.deb && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
-    chown -R $DOCKER_USER:$DOCKER_USER $DOCKER_HOME/.config && \
+    chown -R $DOCKER_USER:$DOCKER_USER $DOCKER_HOME && \
     pip3 install \
         numba \
         numpydoc \

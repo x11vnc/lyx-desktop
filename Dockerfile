@@ -11,6 +11,7 @@ USER root
 WORKDIR /tmp
 COPY image/config $DOCKER_HOME/.config
 COPY image/bin /usr/local/bin
+COPY image/share /usr/share
 COPY image/etc /etc
 COPY image/home $DOCKER_HOME
 
@@ -54,8 +55,9 @@ RUN add-apt-repository ppa:lyx-devel/release && \
         aspell-en \
         ispell \
         evince \
+	dbus-x11 \
         xpdf \
-	    at-spi2-core \
+	at-spi2-core \
         psutils \
         pstoedit \
         ps2eps \

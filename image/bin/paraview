@@ -1,0 +1,3 @@
+#!/bin/sh
+
+/opt/paraviewopenfoam56/bin/paraview --mesa $@

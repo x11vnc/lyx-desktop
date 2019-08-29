@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=ParaView
+Comment=Parallel visualization application
+Exec=/opt/paraviewopenfoam56/bin/paraview --mesa
+Icon=/opt/paraviewopenfoam56/share/icons/hicolor/96x96/apps/paraview.png
+Categories=Education;Math;Science;

@@ -10,6 +10,7 @@ LABEL maintainer "Xiangmin Jiao <xmjiao@gmail.com>"
 USER root
 WORKDIR /tmp
 COPY image/config $DOCKER_HOME/.config
+COPY image/etc /etc
 COPY image/bin /usr/local/bin
 
 # Install texlive and lyx

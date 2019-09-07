@@ -15,7 +15,7 @@ Format 24
 # SCREEN & FONTS SECTION ############################
 #
 
-\allow_geometry_session false
+\allow_geometry_session true
 \paragraph_markers true
 \screen_font_roman "Times New Roman"
 \screen_font_sans "Arial"

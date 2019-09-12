@@ -77,7 +77,8 @@ RUN add-apt-repository ppa:lyx-devel/release && \
         openprinting-ppds \
         system-config-printer \
         paraviewopenfoam56 \
-        ffmpeg winff && \
+        ffmpeg winff \
+        libeigen3-dev && \
     apt-get clean && \
     curl -O http://bluegriffon.org/freshmeat/3.0.1/bluegriffon-3.0.1.Ubuntu16.04-x86_64.deb && \
     dpkg -i bluegriffon-3.0.1.Ubuntu16.04-x86_64.deb && \
@@ -90,13 +91,20 @@ RUN add-apt-repository ppa:lyx-devel/release && \
         python-igraph \
         openmesh \
         mpi4py \
-        pytest && \
+        pytest \
+        Cython \
+        meshio \
+        Sphinx \
+        sphinx_rtd_theme && \
     mv /etc/ImageMagick-6/policy.xml /etc/ImageMagick-6/policy.xml_old
 
 USER $DOCKER_USER
 RUN echo '@lyx' >> $DOCKER_HOME/.config/lxsession/LXDE/autostart && \
     mkdir -p ~/.lyx && \
-    ln -s -f $DOCKER_HOME/.config/LyX/preferences ~/.lyx
+    ln -s -f $DOCKER_HOME/.config/LyX/preferences ~/.lyx && \
+    code --install-extension tcwalther.cython && \
+    cd `find $DOCKER_HOME/.vscode/extensions -name "tcwalther.cython*"` && \
+    test -e Cython.tmLanguage && mv Cython.tmLanguage cython.tmLanguage || echo null > /dev/null
 
 USER root
 

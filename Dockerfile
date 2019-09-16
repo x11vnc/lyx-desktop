@@ -97,13 +97,16 @@ RUN add-apt-repository ppa:lyx-devel/release && \
         mpi4py \
         pytest \
         Sphinx \
-        sphinx_rtd_theme && \
+        sphinx_rtd_theme \
+        pylint \
+        cpplint && \
     mv /etc/ImageMagick-6/policy.xml /etc/ImageMagick-6/policy.xml_old
 
 USER $DOCKER_USER
 RUN echo '@lyx' >> $DOCKER_HOME/.config/lxsession/LXDE/autostart && \
     mkdir -p ~/.lyx && \
-    ln -s -f $DOCKER_HOME/.config/LyX/preferences ~/.lyx
+    ln -s -f $DOCKER_HOME/.config/LyX/preferences ~/.lyx && \
+    code --install-extension mine.cpplint
 
 USER root
 

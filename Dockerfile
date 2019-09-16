@@ -77,20 +77,27 @@ RUN add-apt-repository ppa:lyx-devel/release && \
         openprinting-ppds \
         system-config-printer \
         paraviewopenfoam56 \
-        ffmpeg winff && \
+        ffmpeg winff \
+        libeigen3-dev && \
     apt-get clean && \
     curl -O http://bluegriffon.org/freshmeat/3.0.1/bluegriffon-3.0.1.Ubuntu16.04-x86_64.deb && \
     dpkg -i bluegriffon-3.0.1.Ubuntu16.04-x86_64.deb && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
     chown -R $DOCKER_USER:$DOCKER_USER $DOCKER_HOME && \
     pip3 install \
+        numpy \
+        scipy \
         numba \
         numpydoc \
         setuptools \
         python-igraph \
-        openmesh \
+        networkx \
+        meshio \
+        Cython \
         mpi4py \
-        pytest && \
+        pytest \
+        Sphinx \
+        sphinx_rtd_theme && \
     mv /etc/ImageMagick-6/policy.xml /etc/ImageMagick-6/policy.xml_old
 
 USER $DOCKER_USER

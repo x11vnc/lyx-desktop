@@ -55,7 +55,7 @@ RUN add-apt-repository ppa:lyx-devel/release && \
         aspell-en \
         ispell \
         evince \
-	dbus-x11 \
+	    dbus-x11 \
         xpdf \
 	at-spi2-core \
         psutils \

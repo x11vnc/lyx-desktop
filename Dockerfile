@@ -4,7 +4,7 @@
 # Authors:
 # Xiangmin Jiao <xmjiao@gmail.com>
 
-FROM ams595/desktop:latest
+FROM ams595/desktop:next
 LABEL maintainer "Xiangmin Jiao <xmjiao@gmail.com>"
 
 USER root

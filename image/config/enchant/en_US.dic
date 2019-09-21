@@ -30,7 +30,6 @@ RBF
 Lagrange
 Eulerian
 MOAB
-
 supermesh
 Lagrangian-Eulerian
 MLS
@@ -40,7 +39,7 @@ preprocessing
 adaptivity
 WLS
 MMLS
-Jiao
+jiao
 WLS-ENO
 WENO
 Liu
@@ -90,7 +89,7 @@ QRCP
 pre-optimized
 PDEs
 Comput
-Xiangmin
+xiangmin
 overset
 hexahedral
 tetrahedralization
@@ -123,3 +122,13 @@ FDM
 orthogonally
 runtime
 eigen-analysis
+subgraph
+undirected
+iterable
+chen
+numgeom
+qiao
+numpy
+numba
+scipy
+asarray

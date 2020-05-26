@@ -34,6 +34,7 @@ RUN add-apt-repository ppa:lyx-devel/release && \
         texlive-science \
         lmodern \
         \
+        libtool m4 automake \
         python-lxml \
         \
         preview-latex-style \

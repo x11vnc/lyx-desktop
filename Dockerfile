@@ -38,6 +38,7 @@ RUN add-apt-repository ppa:lyx-devel/release && \
         texlive-science \
         lmodern \
         \
+        libtool m4 automake \
         libxml2-dev \
         python-lxml \
         \
